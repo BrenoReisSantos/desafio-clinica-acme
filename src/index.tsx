@@ -1,15 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import AcmeClinicMenu from './components/menu/AcmeClinicMenu';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import PacientPage from './pages/PacientsPage';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <AcmeClinicMenu >
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<PacientPage />} />
+        </Routes>
+      </BrowserRouter>
+    </AcmeClinicMenu>
   </React.StrictMode>
 );
 
